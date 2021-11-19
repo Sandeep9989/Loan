@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan Details</title>
+</head>
+<body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .itemstable {
+            border-collapse: separate;
+            border-spacing: 50px 0;
+        }
+
+        .itemstd {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% block body_block %}
+        <div class=" row">
+            <div class="col col-lg-12 hr">
+                Hello {{regUserLoanCheckDetails.registeredUser.first_name}} {{regUserLoanCheckDetails.registeredUser.last_name}},
+                <br><br>
+                Thanks for using our application to check the loan. Since you are a prime member for us, here is the information about your search.
+                <br>
+            </div>
+        </div>
+        <br>
+        
+        <br>
+        
+        <div class="row">
+            <div class="col col-lg-12">
+                <h3 style="color:blue;">All Parameters and Their provided values values</h3>
+                <table class="table table-striped itemstable">
+                    <td colspan="14">
+                        <hr style="width:100%;margin-left:0">
+                    </td>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Married</th>
+                            <th scope="col">Dependents</th>
+                            <th scope="col">Education</th>
+                            <th scope="col">Self_Employed</th>
+                            <th scope="col">ApplicantIncome</th>
+                            <th scope="col">CoapplicantIncome</th>
+                            <th scope="col">LoanAmount</th>
+                            <th scope="col">Loan_Amount_Term_In_Months</th>
+                            <th scope="col">Credit_History</th>
+                            <th scope="col">Property_Area  </th>
+                            <th scope="col">Result</th>
+                        </tr>
+                    <tbody>
+                        <td colspan="14">
+                            <hr style="width:100%;margin-left:0">
+                        </td>
+                        <tr>
+                            <td scope="row">{{regUserLoanCheckDetails.registeredUser.first_name}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Gender}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Married}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Dependents}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Education}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Self_Employed}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.ApplicantIncome}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.CoapplicantIncome}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.LoanAmount}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Loan_Amount_Term_In_Months}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Credit_History}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Property_Area}}</td>
+                            <td scope="row">{{regUserLoanCheckDetails.Result}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="14">
+                                <hr style="width:100%;margin-left:0">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>

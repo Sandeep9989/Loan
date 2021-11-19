@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan Registration</title>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<script>
+function showMe(box) {
+
+    var chboxs = document.getElementsByName("Premium_Membership");
+    var vis = "none";
+    for(var i=0;i<chboxs.length;i++) { 
+        if(chboxs[i].checked){
+         vis = "block";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
+}
+</script>
+<style>
+.body {
+	color: #999;
+	background: #e2e2e2;
+	font-family: 'Roboto', sans-serif;
+}
+.form-control {
+	min-height: 41px;
+	box-shadow: none;
+	border-color: #e1e1e1;
+}
+.form-control:focus {
+	border-color: #00cb82;
+}	
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.form-header {
+	margin: -30px -30px 20px;
+	padding: 30px 30px 10px;
+	text-align: center;
+	background: #00cb82;
+	border-bottom: 1px solid #eee;
+	color: #fff;
+}
+.form-header h2 {
+	font-size: 34px;
+	font-weight: bold;
+	margin: 0 0 10px;
+	font-family: 'Pacifico', sans-serif;
+}
+.form-header p {
+	margin: 20px 0 15px;
+	font-size: 17px;
+	line-height: normal;
+	font-family: 'Courgette', sans-serif;
+}
+.signup-form {
+	width: 390px;
+	margin: 0 auto;	
+	padding: 30px 0;	
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #f0f0f0;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form .form-group {
+	margin-bottom: 20px;
+}		
+.signup-form label {
+	font-weight: bolder;
+    font-size: 17px;
+}
+.signup-form input[type="checkbox"] {
+	position: relative;
+	top: 1px;
+}
+.signup-form .btn {        
+	font-size: 16px;
+	font-weight: bold;
+	background: #00cb82;
+	border: none;
+	min-width: 200px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #00b073 !important;
+	outline: none;
+}
+.signup-form a {
+	color: #00cb82;		
+}
+.signup-form a:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body class="container body">
+  {% extends "html/header.html" %} {% block body_block %}
+    
+<div class="signup-form">
+    <form action="{% url 'userregistrtion' %}" method="post">
+		{% csrf_token %}
+		<div class="form-header">
+			<h2>Sign Up</h2>
+			<p>For registered users, we save the loan checking details, can check in history page after you login</p>
+		</div>
+		{{outputmessage}}
+		<div class="form-group">
+			<label>First Name</label>
+        	<input type="text" class="form-control" name="first_name" required="required">
+        </div>
+		<div class="form-group">
+			<label>Last Name</label>
+        	<input type="text" class="form-control" name="last_name" required="required">
+        </div>
+        <div class="form-group">
+			<label>Username</label>
+        	<input type="text" class="form-control" name="username" required="required">
+        </div>
+        <div class="form-group">
+			<label>Email Address</label>
+        	<input type="email" class="form-control" name="email" required="required">
+        </div>
+        <div class="form-group">
+			<label>Phone Number</label>
+        	<input type="number" class="form-control" name="phonenumber" required="required">
+        </div>
+        
+		<div class="form-group">
+			<label>Password</label>
+            <input type="password" class="form-control" name="password" required="required">
+        </div>
+		<div class="form-group">
+			<label>Confirm Password</label>
+            <input type="password" class="form-control" name="confirm_password" required="required">
+        </div>        
+        <!-- https://stackoverflow.com/questions/18421082/show-hide-div-if-checkbox-selected -->
+        <input type="checkbox" name="Premium_Membership" onclick="showMe('payment_form')">&nbsp;I need Premium Membership</input
+		<!-- https://bootsnipp.com/snippets/5Mkl8 -->
+<div id="payment_form" style="display:none">
+<div class="form-group">
+<label for="username">It is just worth of $10</label>
+<label for="username">Full name (on the card)</label>
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text"><i class="fa fa-user"></i></span>
+	</div>
+	<!-- <input type="text" readonly class="form-control" name="name_on_card" placeholder="" required> -->
+	<input type="text" class="form-control" name="name_on_card" placeholder="" required>
+</div> <!-- input-group.// -->
+</div> <!-- form-group.// -->
+
+<div class="form-group">
+<label for="cardNumber">Card number</label>
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+	</div>
+	<input type="text" class="form-control" name="card_number" placeholder="" required>
+</div> <!-- input-group.// -->
+</div> <!-- form-group.// -->
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label><span class="hidden-xs">Expiration</span> </label>
+        	<div class="form-inline">
+        		<select class="form-control" name ="card_month" style="width:45%" required>
+				  <option>MM</option>
+				  <option value ="January">01 - January</option>
+				  <option value ="February">02 - February</option>
+				  <option value ="March">03 - March</option>
+				  <option value ="April">04 - April</option>
+				  <option value ="May">05 - May</option>
+				  <option value ="June">06 - June</option>
+				  <option value ="July">07 - July</option>
+				  <option value ="August">08 - August</option>
+				  <option value ="September">09 - September</option>
+				  <option value ="October">10 - October</option>
+				  <option value ="November">11 - November</option>
+				  <option value ="December">12 - December</option>
+				</select>
+	            <span style="width:10%; text-align: center"> / </span>
+	            <select class="form-control" name = "card_year" style="width:45%" required>
+				  <option>YY</option>
+				  <option value ="2021">2021</option>
+				  <option value ="2022">2022</option>
+				  <option value ="2023">2023</option>
+				  <option value ="2024">2024</option>
+				</select>
+        	</div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+            <input class="form-control" name="card_cvv" required type="text">
+        </div> <!-- form-group.// -->
+    </div>
+</div> <!-- row.// -->
+</div>
+<div class="form-group">
+			<input type="submit" class="btn btn-primary btn-block btn-lg"></input>
+		</div>	
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

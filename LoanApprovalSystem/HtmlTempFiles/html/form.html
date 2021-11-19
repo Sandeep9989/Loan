@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<FORM METHOD="POST" action="{% url 'submitdata' %}" >
+{% csrf_token %}
+<TABLE BORDER="1">
+  <TR>
+    <TD>Gender</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="Gender" SIZE="20">
+    </TD>
+  </TR>
+  <TR>
+    <TD>Married</TD>
+    <TD><INPUT TYPE="TEXT" NAME="Married" SIZE="20"></TD>
+  </TR>
+  <TR>
+    <TD>Dependents</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="Dependents" SIZE="20">
+    </TD>
+  </TR>
+  <TR>
+    <TD>Education</TD>
+    <TD><INPUT TYPE="TEXT" NAME="Education" SIZE="20"></TD>
+  </TR><TR>
+    <TD>Self_Employed</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="Self_Employed" SIZE="20">
+    </TD>
+  </TR>
+  <TR>
+    <TD>ApplicantIncome</TD>
+    <TD><INPUT TYPE="TEXT" NAME="ApplicantIncome" SIZE="20"></TD>
+  </TR><TR>
+    <TD>CoapplicantIncome</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="CoapplicantIncome" SIZE="20">
+    </TD>
+  </TR>
+  <TR>
+    <TD>LoanAmount</TD>
+    <TD><INPUT TYPE="TEXT" NAME="LoanAmount" SIZE="20"></TD>
+  </TR><TR>
+    <TD>Loan_Amount_Term</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="Loan_Amount_Term" SIZE="20">
+    </TD>
+  </TR>
+  <TR>
+    <TD>Credit_History</TD>
+    <TD><INPUT TYPE="TEXT" NAME="Credit_History" SIZE="20"></TD>
+  </TR>
+  <TR>
+    <TD>Property_Area</TD>
+    <TD><INPUT TYPE="TEXT" NAME="Property_Area" SIZE="20"></TD>
+  </TR>
+</TABLE>
+<P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B1"></P>
+</FORM>
+
+</body>
+</html>
