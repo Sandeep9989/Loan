@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ObjectDoesNotExist
-from win32.lib.winxptheme import IsAppThemed
+# from win32.lib.winxptheme import IsAppThemed
 
 def data(request):
     return render(request,'html/form.html')
