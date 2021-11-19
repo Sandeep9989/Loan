@@ -24,9 +24,9 @@ HTMLFILESDIR =os.path.join(BASE_DIR,'HtmlTempFiles')
 SECRET_KEY = '28av-d_g0$cx#%e-^uc$83_3v7a&b1golg5f6qze)s*htya1_x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['loanchecking.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
