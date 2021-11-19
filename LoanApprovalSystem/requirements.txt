@@ -85,12 +85,11 @@ pymaging @ git+git://github.com/ojii/pymaging.git@596a08fce5664e58d6e8c96847393f
 pymaging-png @ git+git://github.com/ojii/pymaging-png.git@83d85c44e4b2342818e6c068065e031a9f81bb9f
 PyMySQL==0.10.0
 pyparsing==2.4.7
+pypiwin32==223
 python-dateutil==2.8.1
 python-decouple==3.1
 python3-openid==3.1.0
 pytz==2018.5
-pywin32==301
-pywin32-ctypes==0.2.0
 pyzmq==22.2.1
 qrcode==6.1
 requests==2.21.0
