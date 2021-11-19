@@ -71,19 +71,17 @@ pycountry==19.8.18
 pycparser==2.20
 pydantic==1.8.1
 pyds==0.2.0
-pydsstools @ https://github.com/gyanz/pydsstools/zipball/master
 PyDSTool==0.91.0
 Pygments==2.6.1
 PyInstaller==3.6
 PyJWT==1.7.1
 pylint==2.6.0
-pypiwin32==223
+pyparsing==2.4.7
 python-dateutil==2.8.1
 python-decouple==3.1
 python3-openid==3.1.0
 pytz==2018.5
 pyzmq==22.2.1
-qrcode==6.1
 scikit-learn==0.24.1
 scipy==1.6.0
 seaborn==0.11.1
